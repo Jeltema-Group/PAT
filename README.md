@@ -2,7 +2,7 @@
 Pixel Analyzing Tool (PAT) - A tool for computing statistical values for images using CIAO DMSTAT tool.
 
 ## Getting Started 
-We'll start by installing Anaconda inside your personal directory something like within INIGO. You'll need to visit the [Anaconda](https://www.anaconda.com/products/individual#linux) page and download the Linux installer. 
+We'll start by installing Anaconda inside your personal directory within INIGO. You'll need to visit the [Anaconda](https://www.anaconda.com/products/individual#linux) page and download the Linux installer. 
 
 Once you have that file downloaed on your local machine, transfer it to your remote directory something like in INIGO:
 
