@@ -95,7 +95,7 @@ conda jupyter lab
 
 and a web browser will open with jupyter lab running. In case that a web browser cannot connect to Localhost, then read on.
 
-First we need to forward the remote port XXXX (default=8888) to our local machine's port YYYY (you decide what four numbers) and listen to it so that we can run Jupyter lab on our webpage. Run the following:
+First we need to forward the remote port XXXX (default=8888) to our local machine's port YYYY (you decide what four numbers greater than 8888) and listen to it so that we can run Jupyter lab on our webpage. Run the following:
 
 ```
 ssh -Y -N -f -L Localhost:YYYY:Localhost:8888 username@inigo.ucsc.edu
