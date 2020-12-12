@@ -1,8 +1,8 @@
 
 '''
-XPAT - A tool to obtain computed statistical values for images within catalogue files using dmstat.
+PAT - A tool to obtain computed statistical values for images within catalogue files using dmstat.
 
-XPAT is an extension to the MATCha pipleline.
+PAT is an extension to the MATCha pipleline.
 '''
 import numpy as np
 from astropy.table import Table
