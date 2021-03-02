@@ -1,5 +1,5 @@
 # PAT
-Pixel Analyzing Tool (PAT) - A tool for computing statistical values for images using CIAO DMSTAT tool.
+Pixel Analyzing Tool (PAT) - A tool for computing statistical values for images using CIAO DMSTAT tool. Read more on using CIAO tools with Python [Here](https://cxc.harvard.edu/ciao/scripting/runtool.html#runtool.types)
 
 ## Getting Started 
 We'll start by installing Anaconda inside your personal directory within INIGO. You'll need to visit the [Anaconda](https://www.anaconda.com/products/individual#linux) page and download the Linux installer. 
