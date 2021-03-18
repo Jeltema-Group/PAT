@@ -1,0 +1,14 @@
+#========================================
+# Configuration file for PAT
+#
+# Created: Jose E. Jobel, March 17, 2021
+#========================================
+
+# Title for csv file
+Title: "r500_src"
+
+# Provide the path to the exposure map
+Path_1: "/data1/devon/y3a2/current/observations/{}/I/flux_band1_thresh.expmap"
+
+# Provide the path to the other file
+Path_2: "/data1/devon/y3a2/current/clusters/{}/region_{}_r500_source.reg"
