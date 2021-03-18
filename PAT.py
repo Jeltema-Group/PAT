@@ -47,19 +47,19 @@ def fit_to_pandas(catalog):
 
 def configuration():
     """ Opens and returns config file."""
-    with open(r"./Config.yml", 'r') as stream:
+    with open('Config.yml', 'r') as stream:
         config = yaml.safe_load(stream)
 
     return config
 
 def create_df(dataframe, config):
     """ 
-    Used to calculate statistics on r500 source region files
-        and output pandas DataFrame with stat values. 
+    Used to calculate statistics and output pandas DataFrame.  
     """
+    # Dataframe is from `fits_to_panda()`
     df = dataframe
     
-    #empty list
+    #empty lists
     cat_list = []
     obsid_list = []
     min_list = []
@@ -77,9 +77,11 @@ def create_df(dataframe, config):
                 if os.path.exists(config["Path_2"].format(cat_,obs_)
                                  ) == True:
                     
+                    # Create string argument for dmstat
+                    dmstat_arg = config["Path_1"] + "[sky=region(" + config["Path_2"] + ")]"
+                    
                     # set v=0 to disbale dmstat display
-                    Stats=dmstat("/data1/devon/y3a2/current/observations/{}/I/flux_band1_thresh.expmap["\
-                    "sky=region(/data1/devon/y3a2/current/clusters/{}/region_{}_r500_source.reg)]".format(obs_,cat_,obs_),
+                    Stats=dmstat(dmstat_arg.format(obs_,cat_,obs_),
                                  centroid=False,
                                  median=True,
                                  sigma=True
@@ -135,6 +137,8 @@ def create_df(dataframe, config):
     df_created["Null"] = pd.Series(null_list)
     df_created["Median"] = pd.Series(median_list)
     
+    df_created.set_index("Catalog", inplace = True)
+    
     return df_created
 
 def main():
@@ -155,13 +159,15 @@ def main():
     
     df_output = create_df(dataframe, config)
     
-    print(f"\n Dataframe Created!")
+    print("\nDataframe Created!")
+    print(f"\nDataFrame has {df_output.shape[0]} observations.")
+    print(f"DataFrame has {df_output.shape[1]} features.")
     
     print("\nSaving DataFrame to CSV file...")
     
     df_output.to_csv(r"./{}.csv".format(config["Title"]))
     
-    print("Done!")
+    print("\nDone!")
     
 if __name__ == '__main__':
     main()
