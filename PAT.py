@@ -163,9 +163,11 @@ def main():
     print(f"\nDataFrame has {df_output.shape[0]} observations.")
     print(f"DataFrame has {df_output.shape[1]} features.")
     
-    print("\nSaving DataFrame to CSV file...")
+    print(f"\nSaving DataFrame as {config['Title']}.csv ...")
     
-    df_output.to_csv(r"./{}.csv".format(config["Title"]))
+    df_catalog = Table.from_pandas(df_output)
+    
+    df_catalog.write("{}.fits".format(config["Title"]), format="fits")
     
     print("\nDone!")
     
