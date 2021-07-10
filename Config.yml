@@ -1,0 +1,31 @@
+#========================================
+# Configuration file for PAT
+#
+# Created: Jose E. Jobel, March 17, 2021
+#========================================
+
+# Title for csv file
+Title: "PAT_r500_source_region"
+
+#---------------------------------------
+# Paths
+#----------
+#
+# When providing a path, make sure to include `{}` for the 
+#     catalog number. This will allow PAT to iterate through
+#     all catalogs in fits file.
+#
+# Similarly, include `{}` for the catalog and obsid in second path. 
+# Default_1: "/data1/devon/y3a2/current/observations/{}/I/flux_band1_thresh.expmap"
+# Default_2: "/data1/devon/y3a2/current/clusters/{}/region_{}_r500_source.reg"
+#
+# Other Options: "/data1/devon/y3a2/current/clusters/{}/region_{}_r2500_source.reg"
+#                "/data1/devon/y3a2/current/clusters/{}/region_{}_500_kiloparsecs_source.reg"
+#                "/data1/devon/y3a2/current/clusters/{}/region_{}_r500_background.reg"
+#                
+
+# Provide the path to the exposure map
+Path_1: "/data1/devon/y3a2/current/observations/{}/I/flux_band1_thresh.expmap"
+
+# Provide the path to the other file
+Path_2: "/data1/devon/y3a2/current/clusters/{}/region_{}_r500_source.reg"
